@@ -30,6 +30,8 @@ class TheatersController < ApplicationController
 
   def update
     @theater = Theater.find_by_id(params[:id])
+    @theater.name = params[:name]
+    @theater.address = params[:address]
 
     if @theater.save
       redirect_to "/theaters"
@@ -39,7 +41,7 @@ class TheatersController < ApplicationController
   end
 
   def destroy
-    t = Theater.find_by_id(params["id"])
+    t = Theater.find_by_id(params[:id])
     t.destroy
     redirect_to "/theaters"
   end

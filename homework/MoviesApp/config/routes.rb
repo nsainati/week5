@@ -1,5 +1,6 @@
 MoviesApp::Application.routes.draw do
 
+  root to: 'movies#index'
   # Routes for the Theater resource:
   # CREATE
   get '/theaters/new', controller: 'theaters', action: 'new'
